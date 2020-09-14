@@ -1,0 +1,138 @@
+# Exported from Fuse 2017.1.0
+
+newmtl Hat
+illum 4 
+Kd 1.00 1.00 1.00 
+Tf 1.00 1.00 1.00 
+Ni 1.00 
+Ks 1.00 1.00 1.00 
+Ns 512 
+adobe_reflectivity 0.04 
+adobe_bump_strength 0.0 
+d 1.0 
+
+map_d hill_Hat_Opacity.png
+map_Kd hill_Hat_Diffuse.png
+adobe_map_normal hill_Hat_Normal.png
+map_Ks hill_Hat_Specular.png
+adobe_map_shininess hill_Hat_Gloss.png
+
+newmtl Hair
+illum 4 
+Kd 1.00 1.00 1.00 
+Tf 1.00 1.00 1.00 
+Ni 1.00 
+Ks 1.00 1.00 1.00 
+Ns 512 
+adobe_reflectivity 0.04 
+adobe_bump_strength 0.0 
+d 1.0 
+
+map_d hill_Hair_Opacity.png
+map_Kd hill_Hair_Diffuse.png
+adobe_map_normal hill_Hair_Normal.png
+map_Ks hill_Hair_Specular.png
+adobe_map_shininess hill_Hair_Gloss.png
+
+newmtl Top
+illum 4 
+Kd 1.00 1.00 1.00 
+Tf 1.00 1.00 1.00 
+Ni 1.00 
+Ks 1.00 1.00 1.00 
+Ns 512 
+adobe_reflectivity 0.04 
+adobe_bump_strength 0.0 
+d 1.0 
+
+map_d hill_Top_Opacity.png
+map_Kd hill_Top_Diffuse.png
+adobe_map_normal hill_Top_Normal.png
+map_Ks hill_Top_Specular.png
+adobe_map_shininess hill_Top_Gloss.png
+
+newmtl Bottom
+illum 4 
+Kd 1.00 1.00 1.00 
+Tf 1.00 1.00 1.00 
+Ni 1.00 
+Ks 1.00 1.00 1.00 
+Ns 512 
+adobe_reflectivity 0.04 
+adobe_bump_strength 0.0 
+d 1.0 
+
+map_d hill_Bottom_Opacity.png
+map_Kd hill_Bottom_Diffuse.png
+adobe_map_normal hill_Bottom_Normal.png
+map_Ks hill_Bottom_Specular.png
+adobe_map_shininess hill_Bottom_Gloss.png
+
+newmtl Glove
+illum 4 
+Kd 1.00 1.00 1.00 
+Tf 1.00 1.00 1.00 
+Ni 1.00 
+Ks 1.00 1.00 1.00 
+Ns 512 
+adobe_reflectivity 0.04 
+adobe_bump_strength 0.0 
+d 1.0 
+
+map_d hill_Glove_Opacity.png
+map_Kd hill_Glove_Diffuse.png
+adobe_map_normal hill_Glove_Normal.png
+map_Ks hill_Glove_Specular.png
+adobe_map_shininess hill_Glove_Gloss.png
+
+newmtl Beard
+illum 4 
+Kd 1.00 1.00 1.00 
+Tf 1.00 1.00 1.00 
+Ni 1.00 
+Ks 1.00 1.00 1.00 
+Ns 512 
+adobe_reflectivity 0.04 
+adobe_bump_strength 0.0 
+d 1.0 
+
+map_d hill_Beard_Opacity.png
+map_Kd hill_Beard_Diffuse.png
+adobe_map_normal hill_Beard_Normal.png
+map_Ks hill_Beard_Specular.png
+adobe_map_shininess hill_Beard_Gloss.png
+
+newmtl Shoes
+illum 4 
+Kd 1.00 1.00 1.00 
+Tf 1.00 1.00 1.00 
+Ni 1.00 
+Ks 1.00 1.00 1.00 
+Ns 512 
+adobe_reflectivity 0.04 
+adobe_bump_strength 0.0 
+d 1.0 
+
+map_d hill_Shoes_Opacity.png
+map_Kd hill_Shoes_Diffuse.png
+adobe_map_normal hill_Shoes_Normal.png
+map_Ks hill_Shoes_Specular.png
+adobe_map_shininess hill_Shoes_Gloss.png
+
+newmtl Body
+illum 4 
+Kd 1.00 1.00 1.00 
+Tf 1.00 1.00 1.00 
+Ni 1.00 
+Ks 1.00 1.00 1.00 
+Ns 512 
+adobe_reflectivity 0.04 
+adobe_bump_strength 0.0 
+d 1.0 
+
+map_d hill_Body_Opacity.png
+map_Kd hill_Body_Diffuse.png
+adobe_map_normal hill_Body_Normal.png
+map_Ks hill_Body_Specular.png
+adobe_map_shininess hill_Body_Gloss.png
+
