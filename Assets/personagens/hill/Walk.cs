@@ -7,6 +7,7 @@ public class Walk : MonoBehaviour
 	public float _rodar = 100;
 	private Animator _animator;
 	private float _andar = 0;
+	
     // Start is called before the first frame update
     void Start()
     {
@@ -25,10 +26,13 @@ public class Walk : MonoBehaviour
     	if (Input.GetKeyUp(KeyCode.LeftShift) && _andar > 0){
     		_andar = 1;
     	}
-        
+
+        // if (transform.position.y > 0){
+        // 	transform.position += Vector3.down * Time.deltaTime;
+        // }
 
         _animator.SetFloat("Andar", _andar);
-
+        
         this.transform.Rotate(0, (Input.GetAxis("Horizontal")* _rodar) * Time.deltaTime, 0);
     }
 }
