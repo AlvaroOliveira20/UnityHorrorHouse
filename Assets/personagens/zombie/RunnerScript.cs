@@ -17,20 +17,20 @@ public class RunnerScript : MonoBehaviour
  	private float timeLeft = 2.5f;
  	
  	void Update(){
- 		
- 		if( Vector3.Distance( amnesia.position, transform.position) <= detectionRange ){
- 			_proximity += 1;
+ 		if(_proximity > 0){
  			timeLeft -= Time.deltaTime;
  			if(timeLeft < 0) {	
             	gameObject.SetActive(false);
          	}
+         }
+ 		if( Vector3.Distance( amnesia.position, transform.position) <= detectionRange ){
+ 			_proximity += 1;
+ 			
+ 			
  		}
  		if( Vector3.Distance( hill.position, transform.position) <= detectionRange ){
  			_proximity += 1;
- 			timeLeft -= Time.deltaTime;
- 			if(timeLeft < 0) {	
-            	gameObject.SetActive(false);
-         	}
+ 			
  		}
 
  		_animator.SetFloat("Proximity", _proximity);
