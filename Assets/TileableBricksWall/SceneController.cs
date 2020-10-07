@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class SceneController : MonoBehaviour
 {
 	private GameObject _hillPos;
 	private GameObject _hill2Pos;
 	private GameObject _amnesiaPos;
+	// private GameObject _amnesia2Pos;
 
     // Start is called before the first frame update
     void Start()
@@ -17,15 +19,16 @@ public class SceneController : MonoBehaviour
     }
     public float detectionRange;
     public Transform amnesiaScene1;
+    // public Transform amnesiaScene2;
  	public Transform hillScene1;
  	public Transform hillScene2;
+
  	
 
 
     // Update is called once per frame
     void Update()
     {
-
     	if( Vector3.Distance( amnesiaScene1.position, transform.position) <= detectionRange){
     		_amnesiaPos = GameObject.Find("amnesia");
  			_amnesiaPos.transform.position = new Vector3(72f, 0f, 34f);
@@ -47,7 +50,12 @@ public class SceneController : MonoBehaviour
  			transform.Find("Cena1").gameObject.SetActive(true);
  			transform.Find("Cena2").gameObject.SetActive(false);
  		}
-
-        
+ 		// if( Vector3.Distance( amnesiaScene2.position, transform.position) <= detectionRange){
+ 		// 	_hill2Pos = GameObject.Find("amnesia2");
+ 		// 	_hill2Pos.transform.position = new Vector3(79f, 0f, 34f);
+ 		// 	_hill2Pos.transform.Rotate(0f, 180.0f, 0.0f);
+ 		// 	transform.Find("Cena1").gameObject.SetActive(true);
+ 		// 	transform.Find("Cena2").gameObject.SetActive(false);
+ 		// }
     }
 }
