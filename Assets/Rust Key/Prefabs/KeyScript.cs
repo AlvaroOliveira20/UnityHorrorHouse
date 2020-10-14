@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class KeyScript : MonoBehaviour
 {
+    public static KeyScript Instance;
 	public float distancia;
 	public float detectionRange;
 	public Transform hill;
@@ -13,23 +14,27 @@ public class KeyScript : MonoBehaviour
 	public Transform key3;
 	public Transform key4;
 	public float teste; 
+    void Awake(){
+        Instance = this;
+    }
     // Start is called before the first frame update
     void Start() {
+
     	int r = Random.Range(1, 5);
 		if (r == 1){
     		transform.Find("key").gameObject.SetActive(true);
-    		teste = 1;
+            SceneController.Instance.setMapState(1);
     	} else if (r == 2){
          	transform.Find("key2").gameObject.SetActive(true);
-         	teste = 2;
+         	SceneController.Instance.setMapState(2);
     	}
     	else if (r == 3){
          	transform.Find("key3").gameObject.SetActive(true);
-         	teste = 3;
+         	SceneController.Instance.setMapState(3);
     	}
     	else if (r == 4){
          	transform.Find("key4").gameObject.SetActive(true);
-         	teste = 4;
+         	SceneController.Instance.setMapState(4);
     	}
 
     	
