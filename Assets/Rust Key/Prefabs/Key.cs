@@ -26,15 +26,7 @@ public class Key : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-   //  	Debug.Log("ok");
-    	
-   //  	if( Vector3.Distance( amnesiaScene1.position, porta.position) <= detectionRange && ok == 1){
-   //  		_amnesiaPos = GameObject.Find("amnesia");
- 		// 	_amnesiaPos.transform.position = new Vector3(72f, 0f, 34f);
- 		// 	_amnesiaPos.transform.Rotate(0f, 180.0f, 0.0f);
- 		// 	transform.Find("Cena1").gameObject.SetActive(false);
- 		// 	transform.Find("Cena2").gameObject.SetActive(true);
- 		// }
+
     	if( Vector3.Distance( amnesia.position, transform.position) <= detectionRange){
     		gameObject.SetActive(false);
     		ok = 1;

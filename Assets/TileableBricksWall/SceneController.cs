@@ -13,14 +13,12 @@ public class SceneController : MonoBehaviour
 	// private GameObject _amnesia2Pos;
 
     void Awake(){
-    Instance = this;
+        Instance = this;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
-       
         
     }
     public float detectionRange;
@@ -38,36 +36,36 @@ public class SceneController : MonoBehaviour
     public Texture2D minimapk4;
     public Texture2D minimapFinal;
 
- 	
-
-
     // Update is called once per frame
-    void OnGUI()
-        {
-            if(Key.Instance.getKey() == 0 && Show == 0)
-                GUI.Label(new Rect(10, 10, 150, 150), minimap);
-            if(MinimapStatus == 1 && Show == 1)
-                GUI.Label(new Rect(10, 10, 150, 150), minimapk1);
-            if(MinimapStatus == 2 && Show == 1)
-                GUI.Label(new Rect(10, 10, 150, 150), minimapk2);
-            if(MinimapStatus == 3 && Show == 1)
-                GUI.Label(new Rect(10, 10, 150, 150), minimapk3);
-            if(MinimapStatus == 4 && Show == 1)
-                GUI.Label(new Rect(10, 10, 150, 150), minimapk4);
-            if(ShowStatus == 1)
-                GUI.Label(new Rect(10, 10, 150, 150), minimapFinal);
-            if(Show == 1)
-                GUI.Label(new Rect(10, 160, 1000, 20), "Encontre a chave para abrir.");
-            if(ShowStatus == 1)
-                GUI.Label(new Rect(10, 160, 1000, 20), "Você encontrou a chave!");
+    void OnGUI() {
 
-        }
+        if(Key.Instance.getKey() == 0 && Show == 0)
+            GUI.Label(new Rect(10, 10, 150, 150), minimap);
+        if(MinimapStatus == 1 && Show == 1)
+            GUI.Label(new Rect(10, 10, 150, 150), minimapk1);
+        if(MinimapStatus == 2 && Show == 1)
+            GUI.Label(new Rect(10, 10, 150, 150), minimapk2);
+        if(MinimapStatus == 3 && Show == 1)
+            GUI.Label(new Rect(10, 10, 150, 150), minimapk3);
+        if(MinimapStatus == 4 && Show == 1)
+            GUI.Label(new Rect(10, 10, 150, 150), minimapk4);
+        if(ShowStatus == 1)
+            GUI.Label(new Rect(10, 10, 150, 150), minimapFinal);
+        if(Show == 1)
+            GUI.Label(new Rect(10, 160, 1000, 20), "Encontre a chave para abrir.");
+        if(ShowStatus == 1)
+            GUI.Label(new Rect(10, 160, 1000, 20), "Você encontrou a chave!");
+
+    }
+
     public void setShow(int Param){
         Show = Param;
     }
+
     public void setMapState(int Param){
         MinimapStatus = Param;
     }
+
     public void setStatus(int Param){
         ShowStatus = Param;
     }
@@ -76,8 +74,6 @@ public class SceneController : MonoBehaviour
         if( Vector3.Distance( amnesiaScene1.position, transform.position) <= detectionRange && Key.Instance.getKey() == 0 || Vector3.Distance( hillScene1.position, transform.position) <= detectionRange && Key.Instance.getKey() == 0){
             Show = 1;
         }
-
-
 
     	if( Vector3.Distance( amnesiaScene1.position, transform.position) <= detectionRange && Key.Instance.getKey() == 1){
     		_amnesiaPos = GameObject.Find("amnesia");
