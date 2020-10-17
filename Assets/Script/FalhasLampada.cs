@@ -15,7 +15,7 @@ public class FalhasLampada : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-    	
+    	// lamps_emit = GetComponent<Renderer>().material;
         
     }
 
@@ -24,17 +24,17 @@ public class FalhasLampada : MonoBehaviour
     {
     	//if( Vector3.Distance( amnesia.position, transform.position) <= detectionRange ){
  			
- 		float r = Random.Range(0.01f, 0.5f);
+ 		float r = Random.Range(0.01f, 0.4f);
     	timeLeft -= Time.deltaTime;
  		if(timeLeft < 0 && state == 0) {	
             transform.Find("Spotlightf").gameObject.SetActive(true);
-            //lamps_emit.SetColor("_EmissionColor", Color.white);
+            lamps_emit.EnableKeyword("_EMISSION");
             state = 1;
             timeLeft = r;
         }
         if( timeLeft < 0 && state == 1) {	
             transform.Find("Spotlightf").gameObject.SetActive(false);
-            //lamps_emit.SetColor("_EmissionColor", Color.black);
+            lamps_emit.DisableKeyword("_EMISSION");
             state = 0;
             timeLeft = r;  
         }

@@ -24,6 +24,8 @@ public class SceneController : MonoBehaviour
     public float detectionRange;
     public Transform amnesiaScene1;
     public Transform amnesiaScene2;
+     public Transform amnesiaR;
+      public Transform hillR;
  	public Transform hillScene1;
  	public Transform hillScene2;
     public int Show = 0;
@@ -82,6 +84,7 @@ public class SceneController : MonoBehaviour
  			transform.Find("Cena1").gameObject.SetActive(false);
  			transform.Find("Cena2").gameObject.SetActive(true);
             hillScene2.gameObject.SetActive(false);
+            amnesiaR.gameObject.SetActive(false);
             ShowStatus = 0;
             MinimapStatus = 5;
  		}
@@ -92,6 +95,7 @@ public class SceneController : MonoBehaviour
  			transform.Find("Cena1").gameObject.SetActive(false);
  			transform.Find("Cena2").gameObject.SetActive(true);
             amnesiaScene2.gameObject.SetActive(false);
+            hillR.gameObject.SetActive(false);
             ShowStatus = 0;
             MinimapStatus = 5;
  		}

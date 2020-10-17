@@ -14,6 +14,7 @@ public class RunnerScript : MonoBehaviour
     public float detectionRange;
  	public Transform amnesia;
  	public Transform hill;
+    public Transform scary;
  	private float timeLeft = 2.5f;
  	
  	void Update(){
@@ -25,12 +26,12 @@ public class RunnerScript : MonoBehaviour
          }
  		if( Vector3.Distance( amnesia.position, transform.position) <= detectionRange ){
  			_proximity += 1;
- 			
+ 			scary.gameObject.SetActive(true);
  			
  		}
  		if( Vector3.Distance( hill.position, transform.position) <= detectionRange ){
  			_proximity += 1;
- 			
+ 			scary.gameObject.SetActive(true);
  		}
 
  		_animator.SetFloat("Proximity", _proximity);
