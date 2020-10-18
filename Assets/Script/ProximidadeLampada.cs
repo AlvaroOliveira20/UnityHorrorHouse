@@ -11,6 +11,7 @@ public class ProximidadeLampada : MonoBehaviour
     public float detectionRange;
     public Transform amnesia;
  	public Transform hill;
+    public Transform sound;
  	public Material lamps_emit;
     // Start is called before the first frame update
     void Start()
@@ -22,25 +23,17 @@ public class ProximidadeLampada : MonoBehaviour
     void Update()
     {
 
-    	if( Vector3.Distance(amnesia.position, transform.position) <= detectionRange ){
+    	if( Vector3.Distance(amnesia.position, transform.position) <= detectionRange || Vector3.Distance(hill.position, transform.position) <= detectionRange ){
     		timeLeft -= Time.deltaTime;
             transform.Find("Spotlightf").gameObject.SetActive(false);
             lamps_emit.DisableKeyword("_EMISSION");
             if(timeLeft < 0){
             	transform.Find("corpo").gameObject.SetActive(true);
+                sound.gameObject.SetActive(true);
             	transform.Find("Spotlightf").gameObject.SetActive(true);
             	lamps_emit.EnableKeyword("_EMISSION");
             }
  		}
- 		if( Vector3.Distance(hill.position, transform.position) <= detectionRange ){
-    		timeLeft -= Time.deltaTime;
-            transform.Find("Spotlightf").gameObject.SetActive(false);
-            lamps_emit.DisableKeyword("_EMISSION");
-            if(timeLeft < 0){
-            	transform.Find("corpo").gameObject.SetActive(true);
-            	transform.Find("Spotlightf").gameObject.SetActive(true);
-            	lamps_emit.EnableKeyword("_EMISSION");
-            }
- 		}
+ 		
     }
 }
