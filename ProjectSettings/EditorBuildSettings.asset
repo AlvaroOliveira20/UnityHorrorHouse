@@ -4,5 +4,26 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 5caac340eb9491740a6669fc5acd33f7
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Load.unity
+    guid: 6eaa680c7d7f613479c152b93228920e
+  - enabled: 1
+    path: Assets/Scenes/EndGameWin.unity
+    guid: d3298b73a53224343b9e01b0e00ce0a0
+  - enabled: 1
+    path: Assets/Scenes/EndGameDeath.unity
+    guid: cfaccd029f8c43047a87d7923dd7ebe3
+  - enabled: 1
+    path: Assets/Scenes/DeathScreenHill.unity
+    guid: 8275cef7750ea5e41903d8fdd90b1dbc
+  - enabled: 1
+    path: Assets/Scenes/DeathScreenAmnesia.unity
+    guid: e3373be74aa23ce45982639411c64d30
   m_configObjects: {}

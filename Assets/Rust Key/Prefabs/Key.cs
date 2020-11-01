@@ -8,6 +8,8 @@ public class Key : MonoBehaviour
 	public int ok;
 	public float detectionRange;
 	public Transform hill;
+	public Transform hillkey;
+	public Transform amnesiakey;
 	public Transform amnesia;
 	public Transform amnesiaScene1;
 	private GameObject _amnesiaPos;
@@ -29,12 +31,14 @@ public class Key : MonoBehaviour
 
     	if( Vector3.Distance( amnesia.position, transform.position) <= detectionRange){
     		gameObject.SetActive(false);
+    		amnesiakey.gameObject.SetActive(true);
     		ok = 1;
             SceneController.Instance.setShow(0);
             SceneController.Instance.setStatus(1);
     	}
     	if( Vector3.Distance( hill.position, transform.position) <= detectionRange){
     		gameObject.SetActive(false);
+    		hillkey.gameObject.SetActive(true);
     		ok = 1;
             SceneController.Instance.setShow(0);
             SceneController.Instance.setStatus(1);

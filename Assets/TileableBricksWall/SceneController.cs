@@ -10,6 +10,7 @@ public class SceneController : MonoBehaviour
 	private GameObject _hillPos;
 	private GameObject _hill2Pos;
 	private GameObject _amnesiaPos;
+    public int r;
 	// private GameObject _amnesia2Pos;
 
     void Awake(){
@@ -19,14 +20,19 @@ public class SceneController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        r = Random.Range(1, 4);
     }
     public float detectionRange;
     public Transform amnesiaScene1;
     public Transform amnesiaScene2;
-     public Transform amnesiaR;
-      public Transform hillR;
-      public Transform locked;
+    public Transform amnesiaR;
+    public Transform hillR;
+    public Transform amnesiaR2;
+    public Transform hillR2;
+    public Transform amnesiaR3;
+    public Transform hillR3;
+    public Transform locked;
+    public Transform notify;
  	public Transform hillScene1;
  	public Transform hillScene2;
     public int Show = 0;
@@ -40,6 +46,11 @@ public class SceneController : MonoBehaviour
     public Texture2D minimapk4;
     public Texture2D minimapFinal;
     public Texture2D minimapFinal2;
+    public float timeLeft;
+    public Transform zombie1;
+    public Transform zombie2;
+    public Transform zombie3;
+    public int charInterior;
     
 
     // Update is called once per frame
@@ -59,14 +70,23 @@ public class SceneController : MonoBehaviour
             GUI.Label(new Rect(10, 10, 250, 250), minimapFinal);
         }
         if(Show == 1)
-            GUI.Label(new Rect(10, 260, 1000, 20), "Encontre a chave para abrir.");
-        if(ShowStatus == 1)
+            GUI.Label(new Rect(10, 260, 1000, 20), "Encontre a chave para abrir." );
+        if(ShowStatus == 1){
+            notify.gameObject.SetActive(true);
             GUI.Label(new Rect(10, 260, 1000, 20), "Você encontrou a chave!");
-
+        }
+        if (RandomPlay.Instance.getChar() == 0){
+            GUI.Label(new Rect(Screen.width - 330, Screen.height - 70, 1000, 20), "Tempo até a Amnesia ser assassinada pelo alien: "+ Mathf.RoundToInt(timeLeft));
+        }else if (RandomPlay.Instance.getChar() == 1){
+            GUI.Label(new Rect(Screen.width - 300, Screen.height - 70, 1000, 20), "Tempo até o Hill ser assassinado pelo alien: " + Mathf.RoundToInt(timeLeft));
+        }
     }
 
     public void setShow(int Param){
         Show = Param;
+    }
+    public int getCharInterior(){
+        return charInterior;
     }
 
     public void setMapState(int Param){
@@ -78,6 +98,15 @@ public class SceneController : MonoBehaviour
     }
     void Update()
     {
+        timeLeft -= Time.deltaTime;
+        if(timeLeft < 0){
+            UnityEngine.SceneManagement.SceneManager.LoadScene("EndGameDeath");
+        }
+        if (Input.GetKey(KeyCode.Escape)){
+            UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+        }
+        
+
         if( Vector3.Distance( amnesiaScene1.position, transform.position) <= detectionRange && Key.Instance.getKey() == 0 || Vector3.Distance( hillScene1.position, transform.position) <= detectionRange && Key.Instance.getKey() == 0){
             Show = 1;
             locked.gameObject.SetActive(true);
@@ -90,7 +119,20 @@ public class SceneController : MonoBehaviour
  			transform.Find("Cena1").gameObject.SetActive(false);
  			transform.Find("Cena2").gameObject.SetActive(true);
             hillScene2.gameObject.SetActive(false);
-            amnesiaR.gameObject.SetActive(false);
+            charInterior = 0;
+            if (r == 1){
+                zombie2.gameObject.SetActive(true);
+                zombie3.gameObject.SetActive(true);
+                hillR.gameObject.SetActive(true);
+            }else if (r == 2){
+                zombie2.gameObject.SetActive(true);
+                zombie1.gameObject.SetActive(true);
+                hillR2.gameObject.SetActive(true);
+            }else if (r == 3){
+                zombie3.gameObject.SetActive(true);
+                zombie1.gameObject.SetActive(true);
+                hillR3.gameObject.SetActive(true);
+            }
             ShowStatus = 0;
             MinimapStatus = 5;
  		}
@@ -101,7 +143,21 @@ public class SceneController : MonoBehaviour
  			transform.Find("Cena1").gameObject.SetActive(false);
  			transform.Find("Cena2").gameObject.SetActive(true);
             amnesiaScene2.gameObject.SetActive(false);
-            hillR.gameObject.SetActive(false);
+            charInterior = 1;
+            if (r == 1){
+                zombie2.gameObject.SetActive(true);
+                zombie3.gameObject.SetActive(true);
+                amnesiaR.gameObject.SetActive(true);
+            }else if (r == 2){
+                zombie2.gameObject.SetActive(true);
+                zombie1.gameObject.SetActive(true);
+                amnesiaR2.gameObject.SetActive(true);
+            }else if (r == 3){
+                zombie3.gameObject.SetActive(true);
+                zombie1.gameObject.SetActive(true);
+                amnesiaR3.gameObject.SetActive(true);
+            }
+            
             ShowStatus = 0;
             MinimapStatus = 5;
  		}

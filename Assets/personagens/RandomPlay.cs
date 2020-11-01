@@ -4,17 +4,33 @@ using UnityEngine;
 
 public class RandomPlay : MonoBehaviour
 {
+    public static RandomPlay Instance;
+    public Transform hill;
+    public Transform amnesia;
+    public int r;
 	
+     void Awake(){
+        r = Random.Range(1, 3);
+        Instance = this;
+    }
     // Start is called before the first frame update
     void Start()
     {
-    	int r = Random.Range(1, 3);
+    	
 		if (r == 1){
-    		transform.Find("amnesia").gameObject.SetActive(false);
+            
+    		amnesia.gameObject.SetActive(false);
     	} else if (r == 2){
-         	transform.Find("hill").gameObject.SetActive(false);
+            hill.gameObject.SetActive(false);
     	}
     	
+    }
+    public int getChar(){
+        if (r == 1){
+            return 0;
+        } else {
+            return 1;
+        }
     }
 
     // Update is called once per frame
