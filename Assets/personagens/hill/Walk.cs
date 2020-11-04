@@ -13,7 +13,6 @@ public class Walk : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-    	
         _animator = GetComponent<Animator>();
     }
 
@@ -59,5 +58,6 @@ public class Walk : MonoBehaviour
         _animator.SetFloat("Direcao", _direcao);
         
         this.transform.Rotate(0, (Input.GetAxis("Horizontal")* _rodar) * Time.deltaTime, 0);
+        
     }
 }

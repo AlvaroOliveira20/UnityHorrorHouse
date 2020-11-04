@@ -20,7 +20,7 @@ public class SceneController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        r = Random.Range(1, 4);
+        r = Random.Range(1, 7);
     }
     public float detectionRange;
     public Transform amnesiaScene1;
@@ -31,6 +31,12 @@ public class SceneController : MonoBehaviour
     public Transform hillR2;
     public Transform amnesiaR3;
     public Transform hillR3;
+    public Transform amnesiaR4;
+    public Transform hillR4;
+    public Transform amnesiaR5;
+    public Transform hillR5;
+    public Transform amnesiaR6;
+    public Transform hillR6;
     public Transform locked;
     public Transform notify;
  	public Transform hillScene1;
@@ -50,6 +56,9 @@ public class SceneController : MonoBehaviour
     public Transform zombie1;
     public Transform zombie2;
     public Transform zombie3;
+    public Transform zombie4;
+    public Transform zombie5;
+    public Transform zombie6;
     public int charInterior;
     
 
@@ -98,6 +107,7 @@ public class SceneController : MonoBehaviour
     }
     void Update()
     {
+        r = 6;
         timeLeft -= Time.deltaTime;
         if(timeLeft < 0){
             UnityEngine.SceneManagement.SceneManager.LoadScene("EndGameDeath");
@@ -123,15 +133,45 @@ public class SceneController : MonoBehaviour
             if (r == 1){
                 zombie2.gameObject.SetActive(true);
                 zombie3.gameObject.SetActive(true);
+                zombie4.gameObject.SetActive(true);
+                zombie5.gameObject.SetActive(true);
+                zombie6.gameObject.SetActive(true);
                 hillR.gameObject.SetActive(true);
             }else if (r == 2){
-                zombie2.gameObject.SetActive(true);
                 zombie1.gameObject.SetActive(true);
+                zombie3.gameObject.SetActive(true);
+                zombie4.gameObject.SetActive(true);
+                zombie5.gameObject.SetActive(true);
+                zombie6.gameObject.SetActive(true);
                 hillR2.gameObject.SetActive(true);
             }else if (r == 3){
+                zombie2.gameObject.SetActive(true);
+                zombie1.gameObject.SetActive(true);
+                zombie4.gameObject.SetActive(true);
+                zombie5.gameObject.SetActive(true);
+                zombie6.gameObject.SetActive(true);
+                hillR3.gameObject.SetActive(true);
+            }else if (r == 4){
                 zombie3.gameObject.SetActive(true);
                 zombie1.gameObject.SetActive(true);
-                hillR3.gameObject.SetActive(true);
+                zombie2.gameObject.SetActive(true);
+                zombie5.gameObject.SetActive(true);
+                zombie6.gameObject.SetActive(true);
+                hillR4.gameObject.SetActive(true);
+            }else if (r == 5){
+                zombie3.gameObject.SetActive(true);
+                zombie1.gameObject.SetActive(true);
+                zombie2.gameObject.SetActive(true);
+                zombie4.gameObject.SetActive(true);
+                zombie6.gameObject.SetActive(true);
+                hillR5.gameObject.SetActive(true);
+            }else if (r == 6){
+                zombie3.gameObject.SetActive(true);
+                zombie1.gameObject.SetActive(true);
+                zombie2.gameObject.SetActive(true);
+                zombie4.gameObject.SetActive(true);
+                zombie5.gameObject.SetActive(true);
+                hillR6.gameObject.SetActive(true);
             }
             ShowStatus = 0;
             MinimapStatus = 5;
@@ -147,15 +187,45 @@ public class SceneController : MonoBehaviour
             if (r == 1){
                 zombie2.gameObject.SetActive(true);
                 zombie3.gameObject.SetActive(true);
+                zombie4.gameObject.SetActive(true);
+                zombie5.gameObject.SetActive(true);
+                zombie6.gameObject.SetActive(true);
                 amnesiaR.gameObject.SetActive(true);
             }else if (r == 2){
-                zombie2.gameObject.SetActive(true);
                 zombie1.gameObject.SetActive(true);
+                zombie3.gameObject.SetActive(true);
+                zombie4.gameObject.SetActive(true);
+                zombie5.gameObject.SetActive(true);
+                zombie6.gameObject.SetActive(true);
                 amnesiaR2.gameObject.SetActive(true);
             }else if (r == 3){
+                zombie2.gameObject.SetActive(true);
+                zombie1.gameObject.SetActive(true);
+                zombie4.gameObject.SetActive(true);
+                zombie5.gameObject.SetActive(true);
+                zombie6.gameObject.SetActive(true);
+                amnesiaR3.gameObject.SetActive(true);
+            }else if (r == 4){
                 zombie3.gameObject.SetActive(true);
                 zombie1.gameObject.SetActive(true);
-                amnesiaR3.gameObject.SetActive(true);
+                zombie2.gameObject.SetActive(true);
+                zombie5.gameObject.SetActive(true);
+                zombie6.gameObject.SetActive(true);
+                amnesiaR4.gameObject.SetActive(true);
+            }else if (r == 5){
+                zombie3.gameObject.SetActive(true);
+                zombie1.gameObject.SetActive(true);
+                zombie2.gameObject.SetActive(true);
+                zombie4.gameObject.SetActive(true);
+                zombie6.gameObject.SetActive(true);
+                amnesiaR5.gameObject.SetActive(true);
+            }else if (r == 6){
+                zombie3.gameObject.SetActive(true);
+                zombie1.gameObject.SetActive(true);
+                zombie2.gameObject.SetActive(true);
+                zombie4.gameObject.SetActive(true);
+                zombie5.gameObject.SetActive(true);
+                amnesiaR6.gameObject.SetActive(true);
             }
             
             ShowStatus = 0;
